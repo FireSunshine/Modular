@@ -48,7 +48,7 @@ module.exports = {
         test: /\.styl$/,
         use: ['style-loader', 'css-loader', 'stylus-loader'],
       },
-      // 图片loader
+      // 图片 资源
       {
         test: /\.(png|jpe?g|gif|webpp)$/,
         type: 'asset',
@@ -66,9 +66,9 @@ module.exports = {
           filename: 'static/imgs/[hash:8][ext][query]',
         },
       },
-      // fonts loader
+      // 其他 资源
       {
-        test: /\.(ttf|woff2?)$/,
+        test: /\.(ttf|woff2?|map4|map3|avi)$/,
         type: 'asset/resource',
         generator: {
           filename: 'static/media/[hash:9][ext][query]',

@@ -1,0 +1,7 @@
+.box1, .box {
+  width: 150px;
+  height: 100%;
+  text-align: center;
+  color: brown;
+  background-color: burlywood;
+}

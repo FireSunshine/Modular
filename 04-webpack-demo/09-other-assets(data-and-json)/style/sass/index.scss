@@ -1,0 +1,42 @@
+.box4 {
+  width: 155px;
+  height: 100%;
+  text-align: center;
+  color: rgb(21, 121, 132);
+  background-color: rgb(140, 156, 230);
+}
+.images {
+  display: flex;
+  width: 640px;
+  flex-wrap: wrap;
+  div {
+    width: 320px;
+    height: 180px;
+  }
+  :nth-child(1) {
+    background: url('../../images/Picture 12.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  :nth-child(2) {
+    background: url('../../images/Picture 11.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  :nth-child(3) {
+    background: url('../../images/Picture 10.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  :nth-child(4) {
+    background: url('../../images/Picture 13.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    img {
+      width: 100px;
+      height: 50px;
+    }
+  }
+}

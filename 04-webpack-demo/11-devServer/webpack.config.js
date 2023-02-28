@@ -66,6 +66,8 @@ module.exports = {
     },
     // https: true,
     // http2: true,
+    // hot: false, // 模块热替换
+    // liveReload: false,// 自动刷新
   },
 
   /* 加载器 */

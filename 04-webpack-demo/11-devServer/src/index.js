@@ -39,5 +39,6 @@ box1.classList.add(style.box1);
 // console.log(json5.owner.name);
 
 // server
-fetch('/api/hello').then((response) => response.text());
-// .then((result) => console.log(result));
+// fetch('/api/hello')
+//   .then((response) => response.text())
+//   .then((result) => console.log(result));

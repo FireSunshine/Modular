@@ -35,6 +35,7 @@ module.exports = {
   output: {
     // 输出文件名
     filename: 'bundle.js',
+    // filename: '[name].[contenthash].js',
     // 输出文件夹必须定义为绝对路径
     path: path.resolve(__dirname, 'dist'), // path.resolve
     // 打包前清理 dist 文件夹
@@ -178,6 +179,12 @@ module.exports = {
         },
       },
     ],
+  },
+
+  // 开启缓存
+  cache: {
+    type: 'filesystem',
+    cacheDirectory: path.resolve(__dirname, '.temp_cache'),
   },
 
   /* 插件 */

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const os = require('os');
 
 /* JSON 模块 parser */
 const toml = require('toml');
@@ -171,12 +172,23 @@ module.exports = {
         test: /\.js$/,
         // exclude: /node_modules/, // 排除node_modules代码不编译
         include: path.resolve(__dirname, './src'),
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [['@babel/preset-env', { targets: 'ie 11' }]],
+        use: [
+          {
+            loader: 'thread-loader',
+            options: {
+              workers: os.cpus().length - 1,
+              // 用于控制 worker 的进程数，默认为 os.cpus().length - 1
+              workerParallelJobs: 50, // 用于控制 worker 的并行处理数，默认为 20
+              workerNodeArgs: ['--max-old-space-size=1024'], // 用于为 worker 指定额外的 node 参数
+            },
           },
-        },
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [['@babel/preset-env', { targets: 'ie 11' }]],
+            },
+          },
+        ],
       },
     ],
   },
